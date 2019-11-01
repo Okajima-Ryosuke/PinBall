@@ -20,21 +20,20 @@ public class Point : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "LargeStarTag") {
-			point += 10;
-			string points = point.ToString ();
-			this.PointText.GetComponent<Text> ().text = points;
+			PointSum (10);
 		} else if (other.gameObject.tag == "SmallStarTag") {
-			point += 20;
-			string points = point.ToString ();
-			this.PointText.GetComponent<Text> ().text = points;
+			PointSum (20);
 		} else if (other.gameObject.tag == "LargeCloudTag") {
-			point += 10;
-			string points = point.ToString ();
-			this.PointText.GetComponent<Text> ().text = points;
+			PointSum (10);
 		} else if (other.gameObject.tag == "SmallCloudTag") {
-			point += 20;
-			string points = point.ToString ();
-			this.PointText.GetComponent<Text> ().text = points;
+			PointSum (20);
 		}
+		// else if (other.gameObject.tag == ""){}
+	}
+
+	public void PointSum (int p) {
+		point += p;
+		string points = point.ToString ();
+		this.PointText.GetComponent<Text> ().text = points + "Pt";
 	}
 }
